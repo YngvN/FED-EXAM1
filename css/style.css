@@ -25,7 +25,6 @@ html {
 
 body {
     font-family: system-ui;
-    /* font-size: 1.125rem; */
     line-height: 1.5;
     margin: 0;
 }
@@ -180,6 +179,16 @@ form label {
 .container-main {
     display: inline-block;
 }
+
+#latest {
+    flex-wrap: wrap;
+}
+
+#latest img {
+    margin: 1em;
+}
+
+
 
 #container-about {
     padding-bottom: 10em;
@@ -542,6 +551,7 @@ button:active {
 
 .btn-more {
     position: relative;
+    width: 30%;
 
 }
 
@@ -677,8 +687,6 @@ textarea:focus {
 
 #list-post {
     display: flex;
-    width: 100%;
-    max-width: 50em;
     color: var(--color2);
     flex-direction: row;
     position: relative;
@@ -690,11 +698,17 @@ textarea:focus {
     border-right: 2px solid var(--shadow);
 }
 
+.container-post h2 {
+    padding: 0 1em 0 1em;
+    margin: none;
+}
+
 
 .container-post,
+#list-post,
 #arrows {
     width: 85vw;
-    max-width: 50em;
+    max-width: 40em;
 
 }
 
@@ -807,4 +821,17 @@ textarea:focus {
 
 .main-blog .container {
     flex-direction: column;
+}
+
+.main-blog img {
+    object-fit: contain;
+    max-height: none;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-blog p {
+    padding-top: 1em;
+    padding-bottom: 1em;
 }

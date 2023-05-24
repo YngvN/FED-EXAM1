@@ -1,9 +1,5 @@
-import { displayPosts } from "./blog.js";
-
-window.addEventListener('DOMContentLoaded', fetchPosts);
-
-async function fetchPosts() {
-console.log('fetchposts Started')
+export async function fetchPosts() {
+  console.log('fetchposts Started');
 
   const baseURL = "https://fed-exam.nykas.me/";
   const wpMultiplePosts = "wp-json/wp/v2/posts?per_page=10";
@@ -16,12 +12,10 @@ console.log('fetchposts Started')
   if (postsArray) {
     postsArray = JSON.parse(postsArray);
     isPostsArrayFilled = true;
-    console.log('Test 1')
-
+    console.log('Test 1');
   } else {
     postsArray = [];
-    console.log('Test 2')
-
+    console.log('Test 2');
   }
 
   if (!isPostsArrayFilled) {
@@ -29,8 +23,7 @@ console.log('fetchposts Started')
       const response = await fetch(URLMultiplePosts);
       if (!response.ok) {
         throw new Error('Error fetching posts');
-        console.log('Test 3')
-
+        console.log('Test 3');
       }
 
       const posts = await response.json();
@@ -53,7 +46,7 @@ console.log('fetchposts Started')
           title: title.rendered,
           date: `${year}-${month}-${day}`,
           featuredImage,
-          link
+          content: content.rendered // Include rendered content in the array
         };
 
         postsArray.push(postObject);
@@ -63,29 +56,8 @@ console.log('fetchposts Started')
 
       isPostsArrayFilled = true;
       console.log('Array filled');
-
-      displayPosts();
     } catch (error) {
       console.error('Error fetching posts:', error);
     }
   }
-    displayPosts();
-
-    // Retrieve the "btn-more" buttons from the DOM
-    const btnMoreButtons = document.querySelectorAll('.btn-more');
-
-    // Add event listeners to each "btn-more" button
-    btnMoreButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Get the link attached to the button
-        const link = button.getAttribute('url');
-
-        // Encode the link and navigate to the post.html file with the selected post's link as a URL parameter
-        const encodedLink = encodeURIComponent(link);
-        window.location.href = `post.html?url=${encodedLink}`;
-    });
-    });
-
 }
-
-

@@ -40,3 +40,29 @@ loadingIndicator.style.display = 'block';
 window.addEventListener('load', function() {
   loadingIndicator.style.display = 'none';
 });
+
+export function clickMore(){
+
+  const btnMoreButtons = document.querySelectorAll('.btn-more');
+  const postContainer = document.querySelectorAll('.click');
+
+
+
+  btnMoreButtons.forEach(button => {
+      button.addEventListener('click', () => {
+          const link = button.getAttribute('url');
+
+          const encodedLink = encodeURIComponent(link);
+          window.location.href = `post.html?url=${encodedLink}`;
+      });
+  });
+
+  postContainer.forEach(container => {
+    container.addEventListener('click', () => {
+        const link = container.getAttribute('url');
+
+        const encodedLink = encodeURIComponent(link);
+        window.location.href = `post.html?url=${encodedLink}`;
+      });
+  });
+}
