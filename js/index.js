@@ -1,26 +1,5 @@
-// const leftArrowButton = document.getElementById('btn-left');
-// const rightArrowButton = document.getElementById('btn-right');
-// const listPost = document.getElementById('list-post');
-
-// const scrollAmount = 600; 
-
-// leftArrowButton.addEventListener('click', () => {
-//   listPost.scroll({
-//     left: listPost.scrollLeft - scrollAmount,
-//     behavior: 'smooth'
-//   });
-// });
-
-// rightArrowButton.addEventListener('click', () => {
-//   listPost.scroll({
-//     left: listPost.scrollLeft + scrollAmount,
-//     behavior: 'smooth'
-//   });
-// });
-
-
 const listPost = document.getElementById('list-post');
-const scrollAmount = 350;
+const scrollAmount = 450;
 
 function scrollList(direction, scrollAmount) {
   const newScrollLeft = listPost.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount);

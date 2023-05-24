@@ -36,15 +36,19 @@
         </nav>
     </header>
 
-    <main class="main-blog">
-        <button class="btn-more" onclick="window.location.href = 'blog.html'">Back to the other posts</button>
-        <div class="container">
-            <span class="date">Posted 12.03.23</span>
-            <h1 class="title">Title</h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam tenetur, quisquam, placeat est ullam aliquam facere ad impedit et fuga pariatur nulla itaque. In vel, corrupti eligendi libero ratione numquam.</p>
-        </div>
-        <button class="btn-more" onclick="window.location.href = 'blog.html'">Back to the other posts</button>
-    </main>
+<main class="main-blog">
+    <div class="loading-indicator"></div>
+    <button onclick="window.location.href = 'blog.html'">Back to the other posts</button>
+    <div class="container">
+        <h1 id="post-title"></h1>
+        <p id="post-date"></p>
+        <img id="post-image" alt="">
+        <div id="post-content"></div>
+    </div>
+    <button onclick="window.location.href = 'blog.html'">Back to the other posts</button>
+</main>
+
+
 
     <footer>
         <p>Copyright © 2023 Globetroller | All Rights Reserved</p>
@@ -62,8 +66,9 @@
         </div>
     </footer>
 
+    <script defer src="/js/post.js" type="module"></script>
+    <script defer src="/js/wp.js" type="module"></script>
     <script src="/js/utility.js" type="module"></script>
-    <script src="/js/blog.js" type="module"></script>
 </body>
 
 </html>

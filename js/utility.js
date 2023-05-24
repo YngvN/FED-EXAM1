@@ -32,14 +32,11 @@ window.onscroll = function() {
   prevScrollPos = currentScrollPos;
 };
 
-// var prevScrollPos = window.pageYOffset;
-// window.onscroll = function() {
-//   var currentScrollPos = window.pageYOffset;
-//   if (prevScrollPos > currentScrollPos) {
-//     document.querySelector(".header").style.top = "0";
-//   } else {
-//     document.querySelector(".header").style.top = "-10em";
-//   }
-//   prevScrollPos = currentScrollPos;
-// };
 
+const loadingIndicator = document.querySelector('.loading-indicator');
+
+loadingIndicator.style.display = 'block';
+
+window.addEventListener('load', function() {
+  loadingIndicator.style.display = 'none';
+});
