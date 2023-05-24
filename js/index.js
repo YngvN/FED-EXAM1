@@ -3,6 +3,8 @@ import { clickMore } from "./utility.js";
 
 
 const listPost = document.getElementById('list-post');
+var postNumber = 10;
+
 const scrollAmount = 450;
 
 function scrollList(direction, scrollAmount) {
@@ -41,7 +43,7 @@ async function displayLatestPost() {
   const listPost = document.getElementById('list-post');
   const listItems = listPost.querySelectorAll('li');
 
-  await fetchPosts();
+  await fetchPosts(postNumber);
 
   const baseURL = 'https://fed-exam.nykas.me/wp-json/wp/v2/posts/';
 
