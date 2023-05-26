@@ -113,7 +113,6 @@ async function displayLatestPost() {
     containerPost.appendChild(buttonElement);
 
     containerPost.classList.add('container-post');
-    containerPost.classList.add('click');
     containerPost.setAttribute("url", postURL);
     imageElement.classList.add('post-image');
 
