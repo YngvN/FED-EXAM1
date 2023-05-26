@@ -153,6 +153,27 @@ form label {
     text-shadow: 2px 2px 2px var(--shadow);
 }
 
+button {
+    font-family: 'Rubik', Helvetica;
+    font-size: .9rem;
+    border: none;
+    background-color: var(--color2);
+    color: var(--color4);
+    margin: 1em;
+    padding: 1em;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--color3);
+    color: var(--color2);
+}
+
+button:active {
+    box-shadow: 2px 2px inset var(--shadow);
+}
+
 .page-title {
     border-bottom: none;
     height: 10em;
@@ -347,6 +368,8 @@ li {
 
 
 
+
+
 .header-logo {
     z-index: 11;
     height: 5em;
@@ -419,6 +442,14 @@ li {
         width: 4em;
         height: 4em;
         box-shadow: none;
+        background-color: transparent;
+    }
+
+    .hamburger:active {
+        box-shadow: none;
+    }
+
+    .hamburger:hover {
         background-color: transparent;
     }
 
@@ -518,26 +549,6 @@ footer .social-media {
 }
 
 
-button {
-    font-family: 'Rubik', Helvetica;
-    font-size: .9rem;
-    border: none;
-    background-color: var(--color2);
-    color: var(--color4);
-    margin: 1em;
-    padding: 1em;
-    transition: background-color 0.2s ease;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: var(--color3);
-    color: var(--color2);
-}
-
-button:active {
-    box-shadow: 2px 2px inset var(--shadow);
-}
 
 .btn-more {
     position: relative;

@@ -3,6 +3,9 @@ const navigation = document.querySelector('.navigation');
 const hamburgerBars = document.querySelector('.fa-bars');
 const hamburgerX = document.querySelector('.fa-x');
 
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+
 hamburgerX.style.display = 'none';
 hamburgerButton.addEventListener('click', function() {
 
@@ -27,6 +30,9 @@ window.onscroll = function() {
       document.querySelector(".header").style.top = "0";
     } else {
       document.querySelector(".header").style.top = "-10em";
+      if(isMobile) {
+        document.querySelector(".header").style.top = "-4em";
+      }
     }
   }
   prevScrollPos = currentScrollPos;
@@ -42,7 +48,6 @@ window.addEventListener('load', function() {
 });
 
 export function clickMore() {
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
   const btnMoreButtons = document.querySelectorAll('.btn-more');
   const postContainer = document.querySelectorAll('.click');
