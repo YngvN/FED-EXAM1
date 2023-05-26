@@ -15,10 +15,13 @@ hamburgerButton.addEventListener('click', function() {
         hamburgerX.style.display = 'none';
         hamburgerBars.style.display = 'block';
         hamburgerButton.classList.remove('active');
+        document.body.classList.remove('disable-scroll');
     } else {
         hamburgerBars.style.display = 'none';
         hamburgerX.style.display = 'block';
         hamburgerButton.classList.add('active');
+        document.body.classList.add('disable-scroll');
+
     }
 });
 

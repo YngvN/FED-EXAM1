@@ -74,6 +74,7 @@ img {
 .logo {
     border: none;
     box-shadow: none;
+    cursor: pointer;
 }
 
 .loading-indicator {
@@ -489,6 +490,10 @@ li {
 
     .navigation .social-media {
         margin-top: 2em;
+    }
+
+    .disable-scroll {
+        overflow: hidden;
     }
 
 
