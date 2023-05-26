@@ -61,7 +61,7 @@ async function displayLatestPost() {
     childElement.classList.add("child")
 
     const titleElement = document.createElement('h2');
-    titleElement.textContent = latestPost.title;
+    titleElement.textContent = decodeEntities(latestPost.title);
 
     const dateElement = document.createElement('span');
     dateElement.textContent = `Posted ${latestPost.date}`;
@@ -95,7 +95,7 @@ async function displayLatestPost() {
     const listItem = document.createElement('li');
     const containerPost = document.createElement('div');
     const imageElement = document.createElement('img');
-    const titleElement = document.createElement('h2');
+    const titleElement = document.createElement('h3');
     const dateElement = document.createElement('span');
 
     const postURL = baseURL + post.id;

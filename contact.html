@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong|Rubik">
     <script src="https://kit.fontawesome.com/bb746328b1.js" crossorigin="anonymous"></script>
     <script>
+        // <!-- Hotjar Tracking Code for Globetroller -->
         (function (h, o, t, j, a, r) {
             h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
             h._hjSettings = { hjid: 3506212, hjsv: 6 };
@@ -19,13 +20,12 @@
         })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
     </script>
     <title>Globetroller - Contact</title>
-    <!-- Hotjar Tracking Code for Globetroller -->
 </head>
 
 <body>
     <header class="header">
-        <img src="assets/logo.png" alt="Logo" class="header-logo logo">
-        <button class="hamburger" aria-label="Menu" aria-controls="navigation">
+        <img src="assets/logo.png" alt="Logo" class="header-logo logo" onclick="window.location.href = 'index.html'">
+        <button class="hamburger">
             <i class="fa-solid fa-bars"></i>
             <i class="fa-solid fa-x"></i>
         </button>
@@ -34,7 +34,7 @@
                 <li><a href="index.html" class="nav-item">Home</a></li>
                 <li><a href="blog.html" class="nav-item">Blog</a></li>
                 <li><a href="about.html" class="nav-item">About</a></li>
-                <li class="nav-active"><a href="#" class="nav-item">Contact</a></li>
+                <li class="nav-active"><a href="contact.html" class="nav-item">Contact</a></li>
             </ul>
             <div class="social-media">
                 <a href="https://www.instagram.com"><i class="fa-brands fa-square-instagram"></i></a>
@@ -65,29 +65,29 @@
                 <div class="input-group">
                     <label for="name">Name: </label>
                     <input type="text" id="name" name="name" placeholder="Name Nameson Jr" required>
-                    <i class="fa-solid fa-check pass check"></i>
-                    <i class="fa-solid fa-xmark fail check"></i>
+                    <i class="fa-solid fa-check pass check check-name"></i>
+                    <i class="fa-solid fa-xmark fail check check-name"></i>
                 </div>
 
                 <div class="input-group">
                     <label for="email">Email: </label>
                     <input type="email" id="email" name="email" placeholder="ex@example.com" required>
-                    <i class="fa-solid fa-check pass check"></i>
-                    <i class="fa-solid fa-xmark fail check"></i>
+                    <i class="fa-solid fa-check pass check check-email"></i>
+                    <i class="fa-solid fa-xmark fail check check-email"></i>
                 </div>
 
                 <div class="input-group">
                     <label for="topic">Message Title:</label>
                     <input type="text" id="topic" name="topic" placeholder="Message title here" required>
-                    <i class="fa-solid fa-check pass check"></i>
-                    <i class="fa-solid fa-xmark fail check"></i>
+                    <i class="fa-solid fa-check pass check check-topic"></i>
+                    <i class="fa-solid fa-xmark fail check check-topic"></i>
                 </div>
 
                 <div class="input-group">
                     <label for="message">Message:</label>
                     <textarea id="message" name="message" rows="4" placeholder="Min. 25 characters" required></textarea>
-                    <i class="fa-solid fa-check pass check"></i>
-                    <i class="fa-solid fa-xmark fail check"></i>
+                    <i class="fa-solid fa-check pass check check-message"></i>
+                    <i class="fa-solid fa-xmark fail check check-message"></i>
                 </div>
 
                 <button id="contact-form-btn" type="submit">Send message</button>

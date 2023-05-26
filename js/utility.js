@@ -41,28 +41,44 @@ window.addEventListener('load', function() {
   loadingIndicator.style.display = 'none';
 });
 
-export function clickMore(){
+export function clickMore() {
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
   const btnMoreButtons = document.querySelectorAll('.btn-more');
   const postContainer = document.querySelectorAll('.click');
 
+  const handleClick = (link) => {
+    const encodedLink = encodeURIComponent(link);
+    window.location.href = `post.html?url=${encodedLink}`;
+  };
 
+  btnMoreButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const link = button.getAttribute('url');
+      handleClick(link);
+    });
 
-  btnMoreButtons.forEach(button => {
-      button.addEventListener('click', () => {
-          const link = button.getAttribute('url');
-
-          const encodedLink = encodeURIComponent(link);
-          window.location.href = `post.html?url=${encodedLink}`;
+    if (isMobile) {
+      button.addEventListener('touchstart', (event) => {
+        event.preventDefault();
+        const link = button.getAttribute('url');
+        handleClick(link);
       });
+    }
   });
 
-  postContainer.forEach(container => {
+  postContainer.forEach((container) => {
     container.addEventListener('click', () => {
-        const link = container.getAttribute('url');
+      const link = container.getAttribute('url');
+      handleClick(link);
+    });
 
-        const encodedLink = encodeURIComponent(link);
-        window.location.href = `post.html?url=${encodedLink}`;
+    if (isMobile) {
+      container.addEventListener('touchstart', (event) => {
+        event.preventDefault();
+        const link = container.getAttribute('url');
+        handleClick(link);
       });
+    }
   });
 }

@@ -6,7 +6,6 @@ const listBlog = document.getElementById("list-blog");
 var postNumber = 5;
 
 async function displayPosts() {
-  console.log('displayPosts Started')
   await fetchPosts(postNumber);
   postNumber = postNumber + 5;
 
@@ -77,6 +76,6 @@ function decodeEntities(text) {
 if (btnViewMore) {
   btnViewMore.addEventListener("click", async () => {
     displayPosts();
-    clickMore(); // Call any necessary functionality after appending the new posts
+    clickMore(); 
   });
 }

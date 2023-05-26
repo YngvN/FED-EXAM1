@@ -1,80 +1,81 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-    var nameInput = document.querySelector("#name");
-    var namePassIcon = document.querySelector("#name ~ .pass");
-    var nameFailIcon = document.querySelector("#name ~ .fail");
+  var nameInput = document.querySelector("#name");
+  var emailInput = document.querySelector("#email");
+  var topicInput = document.querySelector("#topic");
+  var messageInput = document.querySelector("#message");
+  var submitButton = document.querySelector("#contact-form-btn");
 
-    var emailInput = document.querySelector("#email");
-    var emailPassIcon = document.querySelector("#email ~ .pass");
-    var emailFailIcon = document.querySelector("#email ~ .fail");
+  var inputs = [nameInput, emailInput, topicInput, messageInput];
+  var icons = Array.from(document.querySelectorAll(".check"));
 
-    var topicInput = document.querySelector("#topic");
-    var topicPassIcon = document.querySelector("#topic ~ .pass");
-    var topicFailIcon = document.querySelector("#topic ~ .fail");
+  icons.forEach(function(icon) {
+    icon.style.display = "none";
+  });
 
-    var messageInput = document.querySelector("#message");
-    var messagePassIcon = document.querySelector("#message ~ .pass");
-    var messageFailIcon = document.querySelector("#message ~ .fail");
+function validateInputs(element = null) {
+  var isValidations = inputs.map(function(input) {
+    if (element && input !== element) return true;
 
-    var submitButton = document.querySelector("#contact-form-btn");
-    
-    var icons = document.querySelectorAll(".check");
-    Array.from(icons).forEach(icon => {
-        icon.style.display = "none";
-    });
-
-    function validateInputs() {
-        if (nameInput.value.length >= 5) {
-            namePassIcon.style.display = 'inline-block';
-            nameFailIcon.style.display = 'none';
-        } else {
-            namePassIcon.style.display = 'none';
-            nameFailIcon.style.display = 'inline-block';
-            return false;
-        }
-
-        var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-        if (emailPattern.test(emailInput.value)) {
-            emailPassIcon.style.display = 'inline-block';
-            emailFailIcon.style.display = 'none';
-        } else {
-            emailPassIcon.style.display = 'none';
-            emailFailIcon.style.display = 'inline-block';
-            return false; 
-        }
-
-        if (topicInput.value.length >= 15) {
-            topicPassIcon.style.display = 'inline-block';
-            topicFailIcon.style.display = 'none';
-        } else {
-            topicPassIcon.style.display = 'none';
-            topicFailIcon.style.display = 'inline-block';
-            return false;
-        }
-
-        if (messageInput.value.length >= 25) {
-            messagePassIcon.style.display = 'inline-block';
-            messageFailIcon.style.display = 'none';
-        } else {
-            messagePassIcon.style.display = 'none';
-            messageFailIcon.style.display = 'inline-block';
-            return false;
-        }
-
+    switch (input) {
+      case nameInput:
+        return input.value.length >= 5 || input.value.length === 0;
+      case emailInput:
+        return input.value.length === 0 || /^[^ ]+@[^ ]+\.[a-z]{2,3}$/.test(input.value);
+      case topicInput:
+        return input.value.length >= 15 || input.value.length === 0;
+      case messageInput:
+        return input.value.length >= 25 || input.value.length === 0;
+      default:
         return true;
     }
+  });
 
-    [nameInput, emailInput, topicInput, messageInput].forEach(input => {
-        input.addEventListener('input', function() {
-            let validationPasses = validateInputs();
-            submitButton.disabled = !validationPasses;
-            submitButton.style.opacity = validationPasses ? "1" : "0.5";
-            submitButton.style.backgroundColor = validationPasses ? "var(--color2)" : "var(--color3)";
-            submitButton.style.cursor = validationPasses ? "pointer" : "auto";
-            submitButton.style.cursor = validationPasses ? "pointer" : "auto";
+  return isValidations.every(function(isValid) {
+    return isValid;
+  });
+}
 
 
-        });
+function displayValidationIcon(inputElement, isValid) {
+  var index = inputs.indexOf(inputElement);
+  if (index !== -1) {
+    var passIcon = icons[index * 2];
+    var failIcon = icons[index * 2 + 1];
+    if (inputElement.value === '') {
+      passIcon.style.display = 'none';
+      failIcon.style.display = 'inline-block';
+    } else {
+      passIcon.style.display = isValid ? 'inline-block' : 'none';
+      failIcon.style.display = isValid ? 'none' : 'inline-block';
+    inputElement.style.outlineColor = isValid ? 'var(--color4)' : '';
+    }
+  }
+}
+
+
+  inputs.forEach(function(input) {
+    input.addEventListener('input', function() {
+      var isValid = validateInputs(input);
+      displayValidationIcon(input, isValid);
+        updateSubmitButtonState();
     });
+  });
+
+function updateSubmitButtonState() {
+  var checkmarksVisible = icons.filter(function(icon) {
+    return icon.classList.contains('pass') && icon.style.display !== 'none';
+  }).length === icons.filter(function(icon) {
+    return icon.classList.contains('pass');
+  }).length;
+
+  submitButton.disabled = !checkmarksVisible;
+  submitButton.style.opacity = checkmarksVisible ? '1' : '0.5';
+  submitButton.style.backgroundColor = checkmarksVisible ? 'var(--color2)' : 'var(--color3)';
+  submitButton.style.cursor = checkmarksVisible ? 'pointer' : 'auto';
+}
+
+
+
 
     submitButton.disabled = true;
     submitButton.style.opacity = "0.5";

@@ -26,15 +26,15 @@
 
 <body>
     <header class="header">
-        <img src="assets/logo.png" alt="Logo" class="header-logo logo">
-        <button class="hamburger" aria-label="Menu" aria-controls="navigation">
+        <img src="assets/logo.png" alt="Logo" class="header-logo logo" onclick="window.location.href = 'index.html'">
+        <button class="hamburger">
             <i class="fa-solid fa-bars"></i>
             <i class="fa-solid fa-x"></i>
         </button>
         <nav class="navigation">
             <ul>
                 <li><a href="index.html" class="nav-item">Home</a></li>
-                <li class="nav-active"><a href="#" class="nav-item">Blog</a></li>
+                <li class="nav-active"><a href="blog.html" class="nav-item">Blog</a></li>
                 <li><a href="about.html" class="nav-item">About</a></li>
                 <li><a href="contact.html" class="nav-item">Contact</a></li>
             </ul>
@@ -50,9 +50,9 @@
     </header>
 
 <main class="main-blog">
-    <div class="loading-indicator"></div>
     <button onclick="window.location.href = 'blog.html'">Back to the other posts</button>
     <div class="container">
+        <div class="loading-indicator"></div>
         <h1 id="post-title"></h1>
         <p id="post-date"></p>
         <div id="post-content"></div>

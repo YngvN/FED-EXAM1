@@ -19,7 +19,6 @@
 }
 
 html {
-    /* font-size: calc(15px + 0.390625vw); */
     color-scheme: light dark;
 }
 
@@ -467,12 +466,7 @@ li {
 
 }
 
-/* END Navigation END */
 
-
-
-
-/* Footer */
 
 .footer-logo {
     height: 5em;
@@ -523,10 +517,6 @@ footer .social-media {
 
 }
 
-/* END Footer END */
-
-/* Themes */
-
 
 button {
     font-family: 'Rubik', Helvetica;
@@ -573,9 +563,8 @@ textarea {
 
 form input:focus,
 textarea:focus {
-    outline-style: solid;
-    outline-width: 3px;
-    outline-color: var(--color4);
+    outline: rgb(221, 96, 96) solid 3px;
+    transition: outline-color .2s ease-in-out;
 }
 
 .input-group {
@@ -637,18 +626,6 @@ textarea:focus {
 
 }
 
-/* END Themes END */
-
-
-
-
-
-
-
-/* Posts */
-
-
-
 
 
 #featured {
@@ -698,9 +675,13 @@ textarea:focus {
     border-right: 2px solid var(--shadow);
 }
 
-.container-post h2 {
+.container-post h3 {
     padding: 0 1em 0 1em;
     margin: none;
+}
+
+.container-post span {
+    font-size: .9rem;
 }
 
 
@@ -732,12 +713,6 @@ textarea:focus {
 }
 
 
-
-
-/* END Posts END */
-
-.main-blog {}
-
 #btn-view-more {
     display: block;
     width: 50%;
@@ -749,8 +724,6 @@ textarea:focus {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
     gap: 20px;
-    /* height: 90vh; */
-    /* overflow: hidden; */
 }
 
 .post {
