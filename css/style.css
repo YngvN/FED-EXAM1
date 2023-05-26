@@ -42,6 +42,7 @@ header {
 main {
     width: min(200ch, 100%);
     margin-inline: auto;
+    min-height: 100vh;
 }
 
 .container {
@@ -150,7 +151,7 @@ h2,
 h3,
 form label {
     font-family: "Trirong", serif;
-    text-shadow: 2px 2px 2px var(--shadow);
+    text-shadow: 1px 1px var(--shadow);
 }
 
 button {

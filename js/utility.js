@@ -3,7 +3,7 @@ const navigation = document.querySelector('.navigation');
 const hamburgerBars = document.querySelector('.fa-bars');
 const hamburgerX = document.querySelector('.fa-x');
 
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 
 hamburgerX.style.display = 'none';
@@ -82,3 +82,18 @@ export function clickMore() {
     }
   });
 }
+
+function updateImageSrc(isMobile) {
+  const images = document.querySelectorAll('img');
+
+  images.forEach((image) => {
+    const src = image.getAttribute('src');
+
+    if (isMobile && src) {
+      const filename = src.substring(src.lastIndexOf('/') + 1);
+      const updatedSrc = src.replace(filename, filename.replace(/(\.[\w\d_-]+)$/i, '-min$1'));
+      image.setAttribute('src', updatedSrc);
+    }
+  });
+}
+updateImageSrc(isMobile);
