@@ -4,8 +4,14 @@ import { clickMore } from "./utility.js";
 const btnViewMore = document.getElementById("btn-view-more");
 const listBlog = document.getElementById("list-blog");
 var postNumber = 5;
+const loadingIndicator = document.querySelector('.loading-indicator');
 
 async function displayPosts() {
+
+
+loadingIndicator.style.display = 'block';
+
+
   await fetchPosts(postNumber);
   postNumber = postNumber + 5;
 
@@ -62,6 +68,7 @@ async function displayPosts() {
 
     clickMore();
   });
+  loadingIndicator.style.display = 'none';
 }
 
 displayPosts();

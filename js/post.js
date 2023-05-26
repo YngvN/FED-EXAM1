@@ -1,6 +1,10 @@
 window.addEventListener('DOMContentLoaded', fetchPost);
 
+const loadingIndicator = document.querySelector('.loading-indicator');
+
 async function fetchPost() {
+  loadingIndicator.style.display = 'block';
+
   const urlParams = new URLSearchParams(window.location.search);
   const encodedLink = urlParams.get('url');
   const postLink = decodeURIComponent(encodedLink);
@@ -36,6 +40,7 @@ async function fetchPost() {
   } catch (error) {
     console.error('Error fetching post:', error);
   }
+  loadingIndicator.style.display = 'none';
 }
 
 function decodeEntities(text) {

@@ -682,12 +682,13 @@ textarea:focus {
     color: var(--color2);
     flex-direction: row;
     position: relative;
-    margin: 1em;
+    margin: 0 0 1em 0;
     scroll-snap-type: x mandatory;
     overflow-x: scroll;
     z-index: 1;
     border-left: 2px solid var(--shadow);
     border-right: 2px solid var(--shadow);
+    background-color: var(--color2);
 }
 
 .container-post h3 {
@@ -696,7 +697,7 @@ textarea:focus {
 }
 
 .container-post span {
-    font-size: .9rem;
+    font-size: .7rem;
 }
 
 
@@ -704,7 +705,7 @@ textarea:focus {
 #list-post,
 #arrows {
     width: 85vw;
-    max-width: 40em;
+    max-width: 35em;
 
 }
 
@@ -725,6 +726,39 @@ textarea:focus {
     align-items: center;
     background-color: var(--color1);
     box-shadow: 2px 2px var(--shadow);
+}
+
+#featured .child {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.list-post-selector {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    position: absolute;
+    justify-content: space-evenly;
+    top: 3em;
+    height: 80%;
+    left: 50%;
+    min-width: max-content;
+    z-index: -1;
+    transition: left .4s;
+
+}
+
+.list-post-selector button {
+    height: 100%;
+    margin: 0;
+    min-width: 100%;
+}
+
+@media (min-width: 1200px) {
+    .list-post-selector {
+        left: 100%;
+    }
 }
 
 
