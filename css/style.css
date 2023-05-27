@@ -4,7 +4,7 @@
     --black: #000000;
     --grey: #4c4c4c;
     --lightgrey: #dfdfdf;
-    --transparent: #52515198;
+    --transparent: #67676798;
     --green: #a2cda6;
     --orange: #ffd590;
     --brown: #b0743d;
@@ -15,7 +15,6 @@
     --color4: #a2cda6;
     --color5: #fbd58e;
     --color6: #ffba60;
-
 }
 
 html {
@@ -61,7 +60,6 @@ main {
     padding: .5em;
     z-index: 1;
 }
-
 
 img {
     max-width: 100%;
@@ -144,8 +142,6 @@ img {
     z-index: 1;
 }
 
-
-
 h1,
 h2,
 h3,
@@ -188,7 +184,6 @@ button:active {
 .page-title h1 {
     align-self: center;
     position: absolute;
-
 }
 
 .page-title img {
@@ -209,8 +204,6 @@ button:active {
     margin: 1em;
 }
 
-
-
 #container-about {
     padding-bottom: 10em;
 }
@@ -220,7 +213,6 @@ button:active {
 #confirmation {
     border-bottom: none;
     align-items: center;
-
 }
 
 .main-contact {
@@ -245,15 +237,12 @@ button:active {
     width: 100%;
 }
 
-
 #container-about img {
     object-fit: contain;
     position: relative;
     max-height: 25em;
     max-width: 50%;
 }
-
-
 
 @media (max-width: 767px) {
     #about {
@@ -263,7 +252,6 @@ button:active {
         padding: 0;
         height: 80vh;
     }
-
 
     #about .child {
         position: absolute;
@@ -306,7 +294,6 @@ button:active {
         display: none;
     }
 
-
     #container-about .container {
         padding: 0;
         margin: 1em 0 1em 0;
@@ -328,7 +315,6 @@ button:active {
     #container-about .container img {
         position: absolute;
         max-width: 100%;
-
         max-height: none;
         filter: brightness(.3);
     }
@@ -342,18 +328,11 @@ button:active {
     }
 }
 
-
-
-
-
-
-
 a,
 p,
 span {
     font-family: 'Rubik', Helvetica;
 }
-
 
 li {
     list-style: none;
@@ -361,15 +340,10 @@ li {
     padding: 0;
 }
 
-
 /* Navigation */
 .hamburger {
     display: none;
 }
-
-
-
-
 
 .header-logo {
     z-index: 11;
@@ -400,7 +374,6 @@ li {
     text-decoration: none;
     font-weight: bold;
 }
-
 
 .navigation a:hover {
     color: var(--color3);
@@ -454,7 +427,6 @@ li {
         background-color: transparent;
     }
 
-
     .navigation {
         position: fixed;
         top: 0;
@@ -473,7 +445,6 @@ li {
     .navigation.show {
         transform: translateX(0);
     }
-
 
     .navigation ul {
         display: flex;
@@ -496,12 +467,7 @@ li {
     .disable-scroll {
         overflow: hidden;
     }
-
-
-
 }
-
-
 
 .footer-logo {
     height: 5em;
@@ -525,8 +491,6 @@ footer {
     align-items: center;
 }
 
-
-
 footer .social-media {
     margin-left: .5em;
     margin-right: .5em;
@@ -538,7 +502,6 @@ footer .social-media {
 }
 
 @media (max-width: 767px) {
-
     .privacy-social {
         width: 100%;
         flex-wrap: wrap;
@@ -548,16 +511,11 @@ footer .social-media {
         font-size: 30px;
         justify-content: space-around;
     }
-
-
 }
-
-
 
 .btn-more {
     position: relative;
     width: 30%;
-
 }
 
 form input,
@@ -589,12 +547,10 @@ textarea:focus {
 }
 
 .check {
-
     position: absolute;
     right: 1em;
     top: 50%;
 }
-
 
 .pass {
     color: green;
@@ -603,7 +559,6 @@ textarea:focus {
 .fail {
     color: red;
 }
-
 
 #contact-form-btn:hover {
     background-color: var(--color3);
@@ -638,10 +593,7 @@ textarea:focus {
     display: none;
     flex-direction: column;
     align-items: center;
-
 }
-
-
 
 #featured {
     display: flex;
@@ -650,7 +602,6 @@ textarea:focus {
     max-height: none;
     align-items: center;
     padding: 0;
-
 }
 
 .btn-arrow {
@@ -697,19 +648,18 @@ textarea:focus {
 }
 
 .container-post span {
+    position: absolute;
+    bottom: 19em;
+    left: 2.5em;
     font-size: .7rem;
 }
-
 
 .container-post,
 #list-post,
 #arrows {
     width: 85vw;
     max-width: 35em;
-
 }
-
-
 
 .container-post {
     display: flex;
@@ -746,7 +696,6 @@ textarea:focus {
     min-width: max-content;
     z-index: -1;
     transition: left .4s;
-
 }
 
 .list-post-selector button {
@@ -755,12 +704,16 @@ textarea:focus {
     min-width: 100%;
 }
 
+.list-post-selector button.active {
+    background-color: var(--color3);
+    color: var(--black);
+}
+
 @media (min-width: 1200px) {
     .list-post-selector {
         left: 100%;
     }
 }
-
 
 #btn-view-more {
     display: block;
@@ -769,91 +722,88 @@ textarea:focus {
     margin-right: auto;
 }
 
+.post {
+    display: flex;
+    padding: 1em;
+    justify-content: left;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    height: 40em;
+    transition: background-color .2s ease-in-out;
+}
+
+.post img {
+    object-fit: cover;
+    height: 20em;
+    width: 100%;
+}
+
+.post:hover {
+    background-color: var(--transparent);
+}
+
 #list-blog {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
-.post {
-    display: flex;
-    height: 10em;
-    overflow: hidden;
-    justify-content: left;
-    align-items: center;
-    position: relative;
-    border: 5px solid #ddd;
-    box-shadow: 3px 3px var(--shadow);
-    margin: 1em;
-}
-
-
-.post button {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-
-}
-
-.post:hover button {
-    opacity: 1;
-}
-
-
-
-.post .title {
-    margin: 1em;
-    max-width: 90%;
-}
-
-.post .title,
-.post .date {
-    color: white;
-}
-
-.post .date {
-    position: absolute;
-    top: 0;
-    margin: 1em;
-}
-
-
-
-.post img {
-    position: absolute;
-    object-fit: cover;
-    filter: brightness(.3);
-    border: none;
-    width: 100%;
-    z-index: -1;
-    transition: filter .2s ease;
-}
-
-.post:hover img {
-    filter: brightness(.2);
-}
-
-@media screen and (max-width: 600px) {
+@media (max-width: 768px) {
     #list-blog {
         grid-template-columns: 1fr;
     }
+
+    .post {
+        height: fit-content;
+    }
+
+    .post img {
+        height: 5em;
+    }
+
+    .main-post img {
+        height: 10em;
+    }
+
+    #post-content {
+        flex-basis: auto;
+    }
+
+
 }
 
-.main-blog .container {
+.main-post {
+    display: flex;
     flex-direction: column;
 }
 
-.main-blog img {
-    object-fit: contain;
-    max-height: none;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
+
+#post-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: 80%;
 }
 
-.main-blog p {
-    padding-top: 1em;
-    padding-bottom: 1em;
+.main-post figure {
+    padding: 0;
+    margin: 0;
+    max-width: none;
+    max-height: none;
+    width: fit-content;
+    height: fit-content;
+
+}
+
+.main-post button {
+    max-width: 20em;
+}
+
+
+
+.main-post h1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
 }
