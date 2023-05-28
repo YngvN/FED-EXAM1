@@ -91,14 +91,6 @@ export function clickMore() {
       const link = container.getAttribute("url");
       handleClick(link);
     });
-
-    if (isMobile) {
-      container.addEventListener("touchstart", (event) => {
-        event.preventDefault();
-        const link = container.getAttribute("url");
-        handleClick(link);
-      });
-    }
   });
 }
 
