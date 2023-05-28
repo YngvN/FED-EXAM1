@@ -6,10 +6,14 @@ const listBlog = document.getElementById("list-blog");
 var postNumber = 5;
 const loadingIndicator = document.querySelector(".loading-indicator");
 
+
+// Displays the current array stored
 async function displayPosts() {
   loadingIndicator.style.display = "block";
 
   await fetchPosts(postNumber);
+
+  // Makes the search url get more posts for each time it's run
   postNumber = postNumber + 5;
 
   const postsArray = JSON.parse(sessionStorage.getItem("tempPostsArray"));
@@ -28,9 +32,7 @@ async function displayPosts() {
     const postURL = baseURL + id;
 
     const postElement = document.createElement("div");
-    postElement.classList.add("post");
-    postElement.classList.add("container");
-    postElement.classList.add("click");
+    postElement.classList.add("post", "container", "click");
     postElement.setAttribute("id", id);
     postElement.setAttribute("url", postURL);
 
@@ -75,6 +77,7 @@ function decodeEntities(text) {
   textarea.innerHTML = text;
   return textarea.value;
 }
+
 
 if (btnViewMore) {
   btnViewMore.addEventListener("click", async () => {

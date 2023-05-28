@@ -5,6 +5,8 @@ const hamburgerX = document.querySelector(".fa-x");
 
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
+
+// Attempts to switch high-res images to low-res
 function updateImageSrc(isMobile) {
   const images = document.querySelectorAll("img");
 
@@ -22,6 +24,7 @@ function updateImageSrc(isMobile) {
   });
 }
 
+// Navigation for mobile
 hamburgerX.style.display = "none";
 hamburgerButton.addEventListener("click", function () {
   navigation.classList.toggle("show");
@@ -38,6 +41,8 @@ hamburgerButton.addEventListener("click", function () {
     document.body.classList.add("disable-scroll");
   }
 });
+
+
 
 var prevScrollPos = window.pageYOffset;
 window.onscroll = function () {
@@ -63,6 +68,8 @@ window.addEventListener("load", function () {
   loadingIndicator.style.display = "none";
 });
 
+
+// Gives the posts some functionality
 export function clickMore() {
   const btnMoreButtons = document.querySelectorAll(".btn-more");
   const postContainer = document.querySelectorAll(".click");

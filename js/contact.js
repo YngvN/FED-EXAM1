@@ -8,10 +8,14 @@ window.addEventListener("DOMContentLoaded", (event) => {
   var inputs = [nameInput, emailInput, topicInput, messageInput];
   var icons = Array.from(document.querySelectorAll(".check"));
 
+
+  // Hides the check icons
   icons.forEach(function (icon) {
     icon.style.display = "none";
   });
 
+
+// Checks if the inputs matches the requirements
   function validateInputs(element = null) {
     var isValidations = inputs.map(function (input) {
       if (element && input !== element) return true;
@@ -32,12 +36,14 @@ window.addEventListener("DOMContentLoaded", (event) => {
           return true;
       }
     });
-
+  
+    // Checks if all are valid
     return isValidations.every(function (isValid) {
       return isValid;
     });
   }
 
+  // Displays the checkmark or x
   function displayValidationIcon(inputElement, isValid) {
     var index = inputs.indexOf(inputElement);
     if (index !== -1) {
@@ -62,6 +68,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
   });
 
+  // Changes the style of the submit button when all criteria is met
   function updateSubmitButtonState() {
     var checkmarksVisible =
       icons.filter(function (icon) {
@@ -87,6 +94,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
   var form = document.querySelector("#contact-form");
   var confirmationContainer = document.querySelector("#confirmation");
 
+
+// Changes the submit form into the confirm container
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 

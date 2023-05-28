@@ -7,6 +7,8 @@ var postNumber = 6;
 const listPost = document.getElementById("list-post");
 const selectorButtons = document.querySelectorAll(".list-post-selector button");
 
+
+// Way to complicated way to fill the homepage
 async function displayLatestPost() {
   loadingIndicator.style.display = "block";
   const latestContainer = document.getElementById("latest");
@@ -22,6 +24,7 @@ async function displayLatestPost() {
     (a, b) => new Date(b.date) - new Date(a.date)
   );
 
+  // Fills the first post
   if (sortedPosts.length > 0) {
     const latestPost = sortedPosts[0];
 
@@ -65,6 +68,7 @@ async function displayLatestPost() {
 
   var postContainerId = 0;
 
+  // Fills the latest posts carousel
   remainingPosts.forEach((post) => {
     const listItem = document.createElement("li");
     const containerPost = document.createElement("div");
@@ -133,6 +137,7 @@ async function displayLatestPost() {
       });
     });
 
+    // Gives the carousel functionality
     const leftArrowButton = document.getElementById("btn-left");
     const rightArrowButton = document.getElementById("btn-right");
 
@@ -196,6 +201,7 @@ async function displayLatestPost() {
   });
 }
 
+// Gets the first paragraph to display in the latest post
 function getFirstParagraph(content) {
   const tempElement = document.createElement("div");
   tempElement.innerHTML = content;
