@@ -1,6 +1,6 @@
 # A traveling blog
 
-![image](https://user-images.githubusercontent.com/52622303/164316813-4b12d99f-aeb7-4069-85cf-e72b3a50ac99.png)
+![Image of Globertroller](img-globetroller-min.png)
 
 A blog about a dude named John that has figured out life. First sucessfull attempt with Wordpress
 
